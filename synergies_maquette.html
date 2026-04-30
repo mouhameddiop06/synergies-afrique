@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synergies Afrique — Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<!-- ══════════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sb-brand">
+    <div class="sb-brand-mark">🏗️</div>
+    <div>
+      <div class="sb-brand-name">Synergies Afrique</div>
+      <div class="sb-brand-sub">Abris Provisoires</div>
+    </div>
+  </div>
+
+  <div class="sb-section-label">Menu principal</div>
+  <nav class="sb-nav">
+    <div class="sb-item active" onclick="showPage('dashboard', this)">
+      <span class="sb-item-ico">📊</span> Tableau de bord
+    </div>
+    <div class="sb-item" onclick="showPage('structures', this)">
+      <span class="sb-item-ico">🏠</span> Structures
+      <span class="sb-badge">14</span>
+    </div>
+
+    <div class="sb-section-label" style="padding-left:0;">Gestion</div>
+    <div class="sb-item"><span class="sb-item-ico">👷</span> Équipes</div>
+    <div class="sb-item"><span class="sb-item-ico">📄</span> Documents</div>
+    <div class="sb-item"><span class="sb-item-ico">📦</span> Approvisionnements</div>
+    <div class="sb-item"><span class="sb-item-ico">📍</span> Localisation</div>
+    <div class="sb-item"><span class="sb-item-ico">📊</span> Rapports</div>
+    <div class="sb-item"><span class="sb-item-ico">⚙️</span> Paramètres</div>
+  </nav>
+
+  <div class="sb-footer">
+    <div style="position:relative;">
+      <div class="sb-avatar">MS</div>
+      <div class="sb-user-status"></div>
+    </div>
+    <div>
+      <div class="sb-user-name">Moussa Sene</div>
+      <div class="sb-user-role">Directeur Technique</div>
+    </div>
+  </div>
+</aside>
+
+<!-- ══════════════════════════════════════════
+     MAIN
+══════════════════════════════════════════ -->
+<div class="main">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="breadcrumb" id="breadcrumb">
+      <span>Synergies Afrique</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Tableau de bord</span>
+    </div>
+    <div class="topbar-actions">
+      <div class="topbar-search">
+        <span class="topbar-search-ico">🔍</span>
+        <input class="topbar-search-input" type="text" placeholder="Rechercher...">
+      </div>
+      <button class="icon-btn" data-tooltip="Notifications">🔔<span class="notif-dot"></span></button>
+      <button class="icon-btn" data-tooltip="Aide">❓</button>
+      <div class="topbar-user">
+        <div class="topbar-user-text">
+          <div class="topbar-user-name">Moussa Sene</div>
+          <div class="topbar-user-email">m.sene@synergies.sn</div>
+        </div>
+        <div class="topbar-avatar">MS</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- ── DASHBOARD ── -->
+    <div class="page active" id="page-dashboard">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Tableau de bord</div>
+          <div class="page-subtitle">Vue d'ensemble du projet · Synergies Afrique</div>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary">⚙️ Filtrer par région</button>
+          <button class="btn btn-primary">＋ Nouveau rapport</button>
+        </div>
+      </div>
+
+      <!-- KPI GRID -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon-blue">🏘️</div>
+          <div>
+            <div class="kpi-value">14</div>
+            <div class="kpi-label">Total structures</div>
+            <div class="kpi-delta delta-up">↑ +2 ce mois</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon-indigo">🏠</div>
+          <div>
+            <div class="kpi-value">14</div>
+            <div class="kpi-label">Abris provisoires</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon-amber">🏢</div>
+          <div>
+            <div class="kpi-value">2</div>
+            <div class="kpi-label">Blocs adm.</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon-green">🚿</div>
+          <div>
+            <div class="kpi-value">6</div>
+            <div class="kpi-label">Blocs sanitaires</div>
+            <div class="kpi-delta delta-up">↑ 1 terminé</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon-red">🧱</div>
+          <div>
+            <div class="kpi-value">4</div>
+            <div class="kpi-label">Murs de clôture</div>
+            <div class="kpi-delta delta-down">↓ 1 suspendu</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP + NOTIFS -->
+      <div class="two-col">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><span class="card-title-ico">📍</span> Localisation des structures</div>
+            <span class="link text-sm">Voir carte complète →</span>
+          </div>
+          <div class="card-body">
+            <div class="map-placeholder" style="height:240px;">
+              <div class="map-counter">7 projet(s) affiché(s)</div>
+              <div class="map-pin" style="top:38%;left:42%;background:var(--status-prep);"></div>
+              <div class="map-pin" style="top:52%;left:55%;background:var(--status-encours);"></div>
+              <div class="map-pin" style="top:44%;left:30%;background:var(--status-termine);"></div>
+              <div class="map-pin" style="top:60%;left:62%;background:var(--status-encours);"></div>
+              <div class="map-pin" style="top:30%;left:65%;background:var(--status-suspendu);"></div>
+              <div class="map-legend">
+                <div class="map-legend-title">Légende</div>
+                <div class="map-legend-row"><div class="map-legend-dot" style="background:var(--status-prep);"></div><span class="map-legend-label">En préparation</span></div>
+                <div class="map-legend-row"><div class="map-legend-dot" style="background:var(--status-encours);"></div><span class="map-legend-label">En cours</span></div>
+                <div class="map-legend-row"><div class="map-legend-dot" style="background:var(--status-termine);"></div><span class="map-legend-label">Terminé</span></div>
+                <div class="map-legend-row"><div class="map-legend-dot" style="background:var(--status-suspendu);"></div><span class="map-legend-label">Suspendu</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><span class="card-title-ico">🔔</span> Notifications</div>
+            <span class="link text-sm">Voir plus</span>
+          </div>
+          <div class="card-body" style="padding-top:0;padding-bottom:0;">
+            <div class="notif-list">
+              <div class="notif-item">
+                <div class="notif-icon-wrap" style="background:var(--status-encours-bg);">📋</div>
+                <div>
+                  <div class="notif-title">Nouvelle affectation</div>
+                  <div class="notif-message">Abri N°3 — Vous avez été assigné au projet.</div>
+                  <div class="notif-time">28/04/2026</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-icon-wrap" style="background:var(--status-suspendu-bg);">⚠️</div>
+                <div>
+                  <div class="notif-title">Délai dépassé</div>
+                  <div class="notif-message">Abri N°7 — Échéance dépassée de 3 jours.</div>
+                  <div class="notif-time">27/04/2026</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-icon-wrap" style="background:var(--status-termine-bg);">✅</div>
+                <div>
+                  <div class="notif-title">Phase complétée</div>
+                  <div class="notif-message">Abri N°1 — Phase Préparation à 100%.</div>
+                  <div class="notif-time">25/04/2026</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-icon-wrap" style="background:var(--status-encours-bg);">📄</div>
+                <div>
+                  <div class="notif-title">Document ajouté</div>
+                  <div class="notif-message">Plan exécution Abri N°5 téléversé.</div>
+                  <div class="notif-time">24/04/2026</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STRUCTURES ── -->
+    <div class="page" id="page-structures">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Liste des structures</div>
+          <div class="page-subtitle">Gérez et suivez l'avancement de vos abris provisoires.</div>
+        </div>
+        <button class="btn btn-primary">＋ Ajouter une structure</button>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-search">
+          <span class="filter-search-ico">🔍</span>
+          <input class="filter-search-input" type="text" placeholder="Rechercher une structure...">
+        </div>
+        <div class="filter-tabs">
+          <div class="filter-tab active" onclick="filterAll(this)">Tous</div>
+          <div class="filter-tab" onclick="filterStatus(this,'prep')"><span class="filter-tab-dot" style="background:var(--status-prep);"></span>En préparation</div>
+          <div class="filter-tab" onclick="filterStatus(this,'encours')"><span class="filter-tab-dot" style="background:var(--status-encours);"></span>En cours</div>
+          <div class="filter-tab" onclick="filterStatus(this,'termine')"><span class="filter-tab-dot" style="background:var(--status-termine);"></span>Terminé</div>
+          <div class="filter-tab" onclick="filterStatus(this,'suspendu')"><span class="filter-tab-dot" style="background:var(--status-suspendu);"></span>Suspendu</div>
+        </div>
+      </div>
+
+      <div class="struct-grid" id="struct-grid">
+
+        <div class="struct-card" data-status="encours">
+          <div class="struct-card-accent" style="background:var(--status-encours);"></div>
+          <div class="struct-card-body">
+            <div class="struct-card-head">
+              <span class="struct-icon">🏠</span>
+              <span class="badge badge-encours"><span class="badge-dot"></span>En cours</span>
+            </div>
+            <div>
+              <div class="struct-name">Abri Provisoire N°1</div>
+              <div class="struct-location"><span class="struct-location-ico">📍</span>Fatick, Fatick</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-head">
+                <span class="progress-label">Progression</span>
+                <span class="progress-pct" style="color:var(--status-encours);">76%</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill fill-blue" style="width:76%"></div></div>
+            </div>
+            <div class="struct-footer">
+              <button class="struct-action" onclick="showPage('detail', null)">Accéder au chantier →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="struct-card" data-status="encours">
+          <div class="struct-card-accent" style="background:var(--status-encours);"></div>
+          <div class="struct-card-body">
+            <div class="struct-card-head">
+              <span class="struct-icon">🏠</span>
+              <span class="badge badge-encours"><span class="badge-dot"></span>En cours</span>
+            </div>
+            <div>
+              <div class="struct-name">Abri Provisoire N°2</div>
+              <div class="struct-location"><span class="struct-location-ico">📍</span>Fatick, Fatick</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-head">
+                <span class="progress-label">Progression</span>
+                <span class="progress-pct" style="color:var(--status-encours);">74%</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill fill-blue" style="width:74%"></div></div>
+            </div>
+            <div class="struct-footer">
+              <button class="struct-action" onclick="showPage('detail', null)">Accéder au chantier →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="struct-card" data-status="prep">
+          <div class="struct-card-accent" style="background:var(--status-prep);"></div>
+          <div class="struct-card-body">
+            <div class="struct-card-head">
+              <span class="struct-icon">🏠</span>
+              <span class="badge badge-prep"><span class="badge-dot"></span>En préparation</span>
+            </div>
+            <div>
+              <div class="struct-name">Abri Provisoire N°3</div>
+              <div class="struct-location"><span class="struct-location-ico">📍</span>Kaolack, Kaolack</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-head">
+                <span class="progress-label">Progression</span>
+                <span class="progress-pct" style="color:var(--status-prep);">38%</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill fill-amber" style="width:38%"></div></div>
+            </div>
+            <div class="struct-footer">
+              <button class="struct-action" onclick="showPage('detail', null)">Accéder au chantier →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="struct-card" data-status="encours">
+          <div class="struct-card-accent" style="background:var(--status-encours);"></div>
+          <div class="struct-card-body">
+            <div class="struct-card-head">
+              <span class="struct-icon">🏢</span>
+              <span class="badge badge-encours"><span class="badge-dot"></span>En cours</span>
+            </div>
+            <div>
+              <div class="struct-name">Bloc Administratif N°1</div>
+              <div class="struct-location"><span class="struct-location-ico">📍</span>Thiès, Thiès</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-head">
+                <span class="progress-label">Progression</span>
+                <span class="progress-pct" style="color:var(--status-encours);">55%</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill fill-blue" style="width:55%"></div></div>
+            </div>
+            <div class="struct-footer">
+              <button class="struct-action" onclick="showPage('detail', null)">Accéder au chantier →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="struct-card" data-status="termine">
+          <div class="struct-card-accent" style="background:var(--status-termine);"></div>
+          <div class="struct-card-body">
+            <div class="struct-card-head">
+              <span class="struct-icon">🚿</span>
+              <span class="badge badge-termine"><span class="badge-dot"></span>Terminé</span>
+            </div>
+            <div>
+              <div class="struct-name">Bloc Sanitaire N°1</div>
+              <div class="struct-location"><span class="struct-location-ico">📍</span>Ziguinchor</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-head">
+                <span class="progress-label">Progression</span>
+                <span class="progress-pct" style="color:var(--status-termine);">100%</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill fill-green" style="width:100%"></div></div>
+            </div>
+            <div class="struct-footer">
+              <button class="struct-action" onclick="showPage('detail', null)">Accéder au chantier →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="struct-card" data-status="suspendu">
+          <div class="struct-card-accent" style="background:var(--status-suspendu);"></div>
+          <div class="struct-card-body">
+            <div class="struct-card-head">
+              <span class="struct-icon">🧱</span>
+              <span class="badge badge-suspendu"><span class="badge-dot"></span>Suspendu</span>
+            </div>
+            <div>
+              <div class="struct-name">Mur de Clôture N°1</div>
+              <div class="struct-location"><span class="struct-location-ico">📍</span>Diourbel</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-head">
+                <span class="progress-label">Progression</span>
+                <span class="progress-pct" style="color:var(--status-suspendu);">22%</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill fill-red" style="width:22%"></div></div>
+            </div>
+            <div class="struct-footer">
+              <button class="struct-action" onclick="showPage('detail', null)">Accéder au chantier →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── DETAIL ── -->
+    <div class="page" id="page-detail">
+
+      <div class="detail-hero">
+        <div class="detail-back" onclick="showPage('structures', null)">← Structures</div>
+        <div class="detail-top">
+          <div class="detail-title">Abri Provisoire N°1</div>
+          <div class="detail-status-badge"><span class="detail-status-dot"></span>En cours</div>
+        </div>
+        <div class="detail-meta">
+          <div class="detail-meta-item">📅 Début&nbsp;<strong>2026-03-10</strong></div>
+          <div class="detail-meta-item">⏰ Échéance&nbsp;<strong>2026-06-30</strong></div>
+          <div class="detail-meta-item">📍&nbsp;<strong>Fatick, Fatick</strong></div>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-cell"><div class="info-cell-label">Superficie</div><div class="info-cell-value">120 m²</div></div>
+        <div class="info-cell"><div class="info-cell-label">Région</div><div class="info-cell-value">Fatick</div></div>
+        <div class="info-cell"><div class="info-cell-label">Département</div><div class="info-cell-value">Fatick</div></div>
+        <div class="info-cell"><div class="info-cell-label">Commune</div><div class="info-cell-value">N/A</div></div>
+        <div class="info-cell"><div class="info-cell-label">GPS</div><div class="info-cell-value gps">−16.0, 14.0</div></div>
+      </div>
+
+      <div class="dkpi-grid">
+        <div class="dkpi-card">
+          <div class="dkpi-accent" style="background:var(--brand-500);"></div>
+          <div class="dkpi-label">Total phases</div>
+          <div class="dkpi-value">5</div>
+          <div class="dkpi-sub">Phases du projet</div>
+        </div>
+        <div class="dkpi-card">
+          <div class="dkpi-accent" style="background:var(--brand-300);"></div>
+          <div class="dkpi-label">Tâches</div>
+          <div class="dkpi-value">32</div>
+          <div class="dkpi-sub">Tâches planifiées</div>
+        </div>
+        <div class="dkpi-card">
+          <div class="dkpi-accent" style="background:var(--status-encours);"></div>
+          <div class="dkpi-label">Avancement</div>
+          <div class="dkpi-value" style="color:var(--brand-500);">76%</div>
+          <div class="dkpi-sub">Progression moyenne</div>
+        </div>
+        <div class="dkpi-card" style="border-color:var(--status-suspendu-border);">
+          <div class="dkpi-accent" style="background:var(--status-suspendu);"></div>
+          <div class="dkpi-label" style="color:var(--status-suspendu);">Délai</div>
+          <div class="dkpi-value" style="color:var(--status-suspendu);">0</div>
+          <div class="dkpi-sub" style="color:var(--status-suspendu);">Jours restants</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div style="display:flex;flex-direction:column;gap:var(--space-5);">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span class="card-title-ico">📋</span> Phases et Tâches</div>
+              <button class="btn btn-secondary btn-sm">＋ Ajouter une phase</button>
+            </div>
+            <div class="card-body">
+              <div class="phase-row"><span class="phase-icon">📱</span><span class="phase-name">Préparation</span><span class="phase-pct-badge pct-green">100%</span><span class="phase-chevron">›</span></div>
+              <div class="phase-row"><span class="phase-icon">📱</span><span class="phase-name">Fondations</span><span class="phase-pct-badge pct-blue">90%</span><span class="phase-chevron">›</span></div>
+              <div class="phase-row"><span class="phase-icon">📱</span><span class="phase-name">Structure métallique</span><span class="phase-pct-badge pct-blue">78%</span><span class="phase-chevron">›</span></div>
+              <div class="phase-row"><span class="phase-icon">📱</span><span class="phase-name">Couverture / Toiture</span><span class="phase-pct-badge pct-amber">60%</span><span class="phase-chevron">›</span></div>
+              <div class="phase-row"><span class="phase-icon">📱</span><span class="phase-name">Finitions &amp; équipements</span><span class="phase-pct-badge pct-red">28%</span><span class="phase-chevron">›</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span class="card-title-ico">📍</span> Localisation</div>
+            </div>
+            <div class="card-body">
+              <div class="map-placeholder" style="height:180px;">
+                <div class="map-pin" style="top:42%;left:47%;position:absolute;background:var(--status-encours);"></div>
+                <div style="position:absolute;bottom:8px;left:8px;background:rgba(255,255,255,.92);border-radius:var(--radius-xs);padding:3px 8px;font-size:10px;color:var(--text-muted);">GPS : −16.00, 14.00 · Fatick</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:var(--space-5);">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span class="card-title-ico">👥</span> Membres</div>
+              <button class="btn btn-secondary btn-sm">＋ Ajouter</button>
+            </div>
+            <div class="card-body">
+              <div class="member-card"><div class="member-avatar av-1">MS</div><div><div class="member-name">Moussa Sene</div><div class="member-role">Directeur Technique</div></div></div>
+              <div class="member-card"><div class="member-avatar av-2">AM</div><div><div class="member-name">Ababacar Mbengue</div><div class="member-role">Client / Superviseur</div></div></div>
+              <div class="member-card"><div class="member-avatar av-3">BD</div><div><div class="member-name">Bineta Diagne</div><div class="member-role">Chef de projet</div></div></div>
+              <div class="member-card"><div class="member-avatar av-4">KD</div><div><div class="member-name">Khady Diallo</div><div class="member-role">Conductrice de travaux</div></div></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span class="card-title-ico">📁</span> Documents</div>
+            </div>
+            <div class="card-body" style="padding-bottom:var(--space-3);">
+              <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-4);">
+                <input class="form-input" type="text" placeholder="Rechercher un document" style="flex:1;">
+                <button class="btn btn-secondary btn-sm">⚙️ Catégories</button>
+              </div>
+              <div class="empty-state">
+                <div class="empty-state-icon">📂</div>
+                <div class="empty-state-title">Aucun document</div>
+                <div class="empty-state-desc">Téléversez des plans, PV ou rapports pour les retrouver ici.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -52,6 +52,7 @@
     </div>
   </div>
 </aside>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
 <!-- ══════════════════════════════════════════
      MAIN
@@ -60,10 +61,13 @@
 
   <!-- TOPBAR -->
   <header class="topbar">
-    <div class="breadcrumb" id="breadcrumb">
+    <div class="topbar-left">
+      <button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+      <div class="breadcrumb" id="breadcrumb">
       <span>Synergies Afrique</span>
       <span class="breadcrumb-sep">›</span>
       <span class="breadcrumb-current">Tableau de bord</span>
+      </div>
     </div>
     <div class="topbar-actions">
       <div class="topbar-search">

@@ -5,6 +5,20 @@
 };
 const navMap = { dashboard: 0, structures: 1, detail: 1 };
 
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('active');
+}
+
+function closeSidebarOnMobile() {
+  if (window.innerWidth <= 768) {
+    document.querySelector('.sidebar').classList.remove('open');
+    document.getElementById('sidebarOverlay').classList.remove('active');
+  }
+}
+
 function showPage(name, el) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
@@ -17,6 +31,7 @@ function showPage(name, el) {
       : `<span class="breadcrumb-current">${c}</span>`
   ).join('');
   document.getElementById('breadcrumb').innerHTML = `<span>Synergies Afrique</span><span class="breadcrumb-sep">›</span>${crumbs}`;
+  closeSidebarOnMobile();
 }
 
 function filterAll(pill) {
